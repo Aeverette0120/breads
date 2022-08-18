@@ -2,6 +2,8 @@
 const express = require('express')
 // DEPENDENCIES
 const methodOverride = require('method-override')
+const mongoose = require('mongoose')
+
 
 // CONFIGURATION
 require('dotenv').config()
@@ -17,6 +19,10 @@ app.use(express.urlencoded({extended: true}))
 // MIDDLEWARE
 app.use(methodOverride('_method'))
 
+mongoose.connect(process.env.MONGO_URI, {family:4}, function(err, connection) {
+  // connection.db('breads');
+  console.log('connected to DB!!!!!!!!')
+});
 
 
 // ROUTES

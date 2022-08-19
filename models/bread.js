@@ -19,7 +19,7 @@ const mongoose = require('mongoose')
 const { Schema } = mongoose
 
 const breadSchema = new Schema({
-  name: { type: String, required: true },
+  name: { type: String, require: true },
   hasGluten: { type: Boolean },
   image: { type: String, default: 'http://placehold.it/500x500.png' }
 })
